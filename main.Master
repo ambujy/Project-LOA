@@ -1,0 +1,378 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="LogicOnlineAcadamy.main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/LOA/LOA%20200%20X%20200.png" type="image/gif" sizes="16x16">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <link href="css/StyleSheet.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        @media screen and (max-width: 500px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="bg-top navbar-light">
+            <div class="container">
+                <div class="row no-gutters d-flex align-items-center align-items-stretch">
+                    <div class="col-md-4 d-flex align-items-center py-4">
+                        <a class="navbar-brand" href="index.aspx">Logic <span>Online Academy</span></a>
+                    </div>
+                    <div class="col-lg-8 d-block">
+                        <div class="row d-flex">
+                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span
+                                        class="icon-paper-plane"></span>
+                                </div>
+                                <div class="text">
+                                    <span>Email</span>
+                                    <span>logicacademy40@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+                                <div class="icon d-flex justify-content-center align-items-center">
+                                    <span class="icon-phone2"></span>
+                                </div>
+                                <div class="text">
+                                    <span>Call</span>
+                                    <span>Call Us: +91 79775 52281</span>
+                                </div>
+                            </div>
+
+                            <div runat="server" class="col-md topper d-flex align-items-center justify-content-end">
+                                <p class="mb-0">
+                                    <a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center"
+                                        id="btn_lgo_reg" runat="server" visible="true" data-toggle="modal" data-target="#modalLRForm">
+                                        <span>LogIn / Register</span>
+                                    </a>
+                                    <asp:Button ID="logout" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center" Visible="false" runat="server" OnClick="logout_Click" Text="Logout" />
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container d-flex align-items-center px-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span>Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" id="indexNav" runat="server"><a href="index.aspx" class="nav-link">Home</a></li>
+                        <li class="nav-item" id="aboutNav" runat="server"><a href="about.aspx" class="nav-link">About</a></li>
+                        <li class="nav-item" id="courseNav" runat="server"><a href="courses.aspx" class="nav-link">Courses</a></li>
+                        <li class="nav-item" id="teacherNav" runat="server"><a href="teacher.aspx" class="nav-link">Tutors</a></li>
+                        <li class="nav-item" id="contactNav" runat="server"><a href="contact.aspx" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+
+
+        <!--Modal: Login / Register Form-->
+        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal" role="document">
+                <!--Content-->
+                <div class="modal-content">
+
+                    <!--Modal cascading tabs-->
+                    <div class="modal-c-tabs">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                                    Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                                    Register</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panels -->
+                        <div class="tab-content">
+                            <!--Panel 7-->
+                            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                                <!--Body-->
+                                <div id="login_model" runat="server" class="modal-body mb-1">
+
+                                    <h1 class="text-xl-center">Log In</h1>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="inputEmail_Username" class="form-control form-control-sm"
+                                            placeholder="Email address or Username" runat="server">
+                                        </asp:TextBox>
+                                        <label for="inputEmail_Username"><i class="fas fa-envelope prefix mr-1"></i>Email address / Username</label>
+                                        <asp:RequiredFieldValidator ValidationGroup="login" ID="logEmail" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="inputEmail_Username" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="inputPassword" class="form-control form-control-sm validate"
+                                            placeholder="Password" runat="server" TextMode="Password">
+                                        </asp:TextBox>
+                                        <label for="inputPassword"><i class="fas fa-lock prefix mr-1"></i>Password</label>
+                                        <asp:RequiredFieldValidator ValidationGroup="login" ID="logPass" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="inputPassword" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <asp:Label ID="logMsg" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <asp:Button ID="login_btn" ValidationGroup="login" class="btn btn-primary" runat="server" Text="LogIn" OnClick="login_btn_Click" />
+                                    </div>
+                                </div>
+                                <!--Footer-->
+                                <div class="modal-footer">
+                                    <div class="options text-center text-md-right mt-1">
+                                        <p>Forgot <a href="passwordReset.aspx" class="blue-text">Password?</a></p>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-danger waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!--/.Panel 7-->
+
+                            <!--Panel 8-->
+                            <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                <!--Body-->
+                                <div class="modal-body mb-1">
+                                    <h1 class="text-xl-center">Register</h1>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-label-group">
+                                                <asp:TextBox ID="fname" class="form-control form-control-sm validate"
+                                                    placeholder="Fisrt Name" runat="server" TextMode="SingleLine">
+                                                </asp:TextBox>
+                                                <label for="fname"><i class="fas fa-id-card mr-1"></i>First Name</label>
+                                                <asp:RequiredFieldValidator ValidationGroup="signup" ID="r1" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="fname" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-label-group">
+                                                <asp:TextBox ID="lname" class="form-control form-control-sm validate"
+                                                    placeholder="Last Name" runat="server" TextMode="SingleLine">
+                                                </asp:TextBox>
+                                                <label for="lname"><i class="fas fa-id-card mr-1"></i>Last Name</label>
+                                                <asp:RequiredFieldValidator ValidationGroup="signup" ID="r2" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="lname" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-label-group">
+                                                <asp:TextBox ID="tbx_date" class="form-control form-control-sm validate"
+                                                    placeholder="Date of Birth" runat="server" TextMode="Date">
+                                                </asp:TextBox>
+                                                <label for="tbx_date"><i class="fas fa-birthday-cake mr-1"></i>Date of Birth</label>
+                                                <asp:RequiredFieldValidator ValidationGroup="signup" ID="r3" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="tbx_date" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-label-group">
+                                                <asp:DropDownList ID="DropDownGender" class="form-control form-control-sm validate" Style="border-radius: 25px;" Placeholder="Gender" runat="server">
+                                                    <asp:ListItem Selected="True" Value="">Gender ?</asp:ListItem>
+                                                    <asp:ListItem Value="Male">Male</asp:ListItem>
+                                                    <asp:ListItem Value="Female">Female</asp:ListItem>
+                                                    <asp:ListItem Value="Transgender">Transgender</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="tbx_phone" class="form-control form-control-sm validate"
+                                            placeholder="Phone Number" runat="server" TextMode="Phone">
+                                        </asp:TextBox>
+                                        <label for="tbx_phone"><i class="fas fa-phone-square mr-1"></i>Phone Number</label>
+                                        <asp:RequiredFieldValidator ValidationGroup="signup" ID="r4" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="tbx_phone" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ValidationGroup="signup" ID="ex2" runat="server"
+                                            ControlToValidate="tbx_phone" ErrorMessage="*Enter Valid Phone Number."
+                                            ValidationExpression="[0-9]{10}" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="signupEmail" class="form-control form-control-sm validate"
+                                            placeholder="Email address" runat="server" TextMode="Email">
+                                        </asp:TextBox>
+                                        <label for="signupEmail"><i class="fas fa-envelope mr-1"></i>Email address</label>
+                                        <asp:RequiredFieldValidator ValidationGroup="signup" ID="emailReq" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="tbx_username" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="tbx_username" class="form-control form-control-sm validate"
+                                            placeholder="Username" runat="server" TextMode="SingleLine">
+                                        </asp:TextBox>
+                                        <label for="tbx_username"><i class="fas fa-user mr-1"></i>Username</label>
+                                        <asp:RequiredFieldValidator ValidationGroup="signup" ID="r5" runat="server" ErrorMessage="*Required" ForeColor="Red" ControlToValidate="tbx_username" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="signupPassword" class="form-control form-control-sm validate"
+                                            placeholder="Enter Password" runat="server" TextMode="Password">
+                                        </asp:TextBox>
+                                        <label for="signupPassword"><i class="fas fa-lock mr-1"></i>Enter Password</label>
+                                        <asp:RegularExpressionValidator ValidationGroup="signup" Display="Dynamic" ForeColor="Red" ControlToValidate="signupPassword" ID="ex1" ValidationExpression="^[\s\S]{8,}$" runat="server" ErrorMessage="*Minimum 8 characters required."></asp:RegularExpressionValidator>
+                                    </div>
+
+                                    <div class="form-label-group">
+                                        <asp:TextBox ID="repeatPassword" class="form-control form-control-sm validate"
+                                            placeholder="Repeat Password" runat="server" TextMode="Password">
+                                        </asp:TextBox>
+                                        <label for="repeatPassword"><i class="fas fa-lock mr-1"></i>Repeat Password</label>
+                                        <asp:CompareValidator ValidationGroup="signup" ID="confirmpass" runat="server" ErrorMessage="*Password does not matched."
+                                            ForeColor="Red" ControlToCompare="signupPassword" ControlToValidate="repeatPassword"
+                                            Display="Dynamic"></asp:CompareValidator>
+                                    </div>
+
+                                    <div class="text-center mt-2 mb-3">
+                                        <asp:Button ID="btn_signup" ValidationGroup="signup" class="btn btn-primary" runat="server" Text="Sign Up" OnClick="btn_signup_Click" />
+                                    </div>
+
+                                    <!--Footer-->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-danger waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--/.Panel 8-->
+                    </div>
+
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+
+        <!--Modal: Login / Register Form-->
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- Footer -->
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container">
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="ftco-footer-widget mb-5">
+                            <h2 class="ftco-heading-2">Have a Questions?</h2>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">ME/201, Navkar Avenue,Viva Jangid Complex, Manvelpada Talav Road,Virar East. Mumbai - 401305</span></li>
+                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 79775 13196</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span
+                                        class="text">logicacademy40@gmail.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="ftco-footer-widget mb-5 ml-md-4">
+                            <h2 class="ftco-heading-2">Links</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="index.aspx"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                                <li><a href="about.aspx"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+                                <li><a href="courses.aspx"><span class="ion-ios-arrow-round-forward mr-2"></span>Courses</a></li>
+                                <li><a href="contact.aspx"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="ftco-footer-widget mb-5">
+                            <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+                            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="https://www.facebook.com/logiconlineacademy-588595061821054" target="_blank"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="https://www.instagram.com/logiconlineacademy/" target="_blank"><span class="icon-instagram"></span></a></li>
+                                <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCB5p9cH3QqsTX61RLm2T5FA" target="_blank"><span class="icon-youtube"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            © 2020 Copyright: Logic Online Academy (LOA) Developed and Maintained by 
+            <a href="https://www.instagram.com/a_j_y_d_v/" target="_blank">Ambuj Yadav</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- loader -->
+        <div id="ftco-loader" class="show fullscreen">
+            <svg class="circular" width="48px" height="48px">
+                <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+                <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                    stroke="#F96D00" />
+            </svg>
+        </div>
+    </form>
+
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+</html>
